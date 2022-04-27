@@ -1,0 +1,982 @@
+[2 - 0xa] INSTR_OP01 b'' // [QWORD* memory[0x21]] = memory[0x0]
+[5 - 0x15] INSTR_OP01 b'' // [QWORD* memory[0x31]] = memory[0x8]
+[7 - 0x1b] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1bb] = 0x0
+[10 - 0x2a] INSTR_OP02 b'' // [unsigned int* memory[0x3d]] = memory[0x1bb]
+[12 - 0x30] INSTR_OP32 b'\xbb\x1c\xf2\x00' // memory[0x1bb] = 0xf21cbb
+[15 - 0x3f] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[17 - 0x45] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[19 - 0x4c] INSTR_OP04 b'J(\x00\x00' // JUMPI if memory[0x1bb] can jump to 0x2897
+[21 - 0x56] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[23 - 0x5d] INSTR_OP04 b'\xe2\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[25 - 0x67] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[27 - 0x6e] INSTR_OP04 b'\xd1\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[29 - 0x78] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[31 - 0x7f] INSTR_OP04 b'\xc0\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[33 - 0x89] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[35 - 0x90] INSTR_OP04 b'\xaf\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[37 - 0x9a] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[39 - 0xa1] INSTR_OP04 b'\x9e\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[41 - 0xab] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[43 - 0xb2] INSTR_OP04 b'\x8d\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[45 - 0xbc] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[47 - 0xc3] INSTR_OP04 b'|\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[49 - 0xcd] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[51 - 0xd4] INSTR_OP04 b'k\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[53 - 0xde] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[55 - 0xe5] INSTR_OP04 b'Z\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[57 - 0xef] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[59 - 0xf6] INSTR_OP04 b'I\xff\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x40
+[61 - 0x100] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x3d]]
+[64 - 0x10f] INSTR_OP32 b'\x10\x00\x00\x00' // memory[0x1c0] = 0x10
+[66 - 0x119] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[69 - 0x128] INSTR_OP32 b'\x84\xe0!\x01' // memory[0x1c0] = 0x121e084
+[72 - 0x137] INSTR_OP32 b'\xf6\x8d\xdf\x07' // memory[0x1c4] = 0x7df8df6
+[74 - 0x141] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[77 - 0x150] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[79 - 0x156] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[81 - 0x15d] INSTR_OP04 b'\xf3\xfe\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x51
+[83 - 0x167] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x21]]
+[85 - 0x171] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x3d]]
+[87 - 0x17b] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[90 - 0x18a] INSTR_OP0A b'\xcf\x01\x00\x00' // memory[0x1cf] = (char)memory[0x1bb] + (long)memory[0x1c7]
+[92 - 0x194] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1cf]]
+[94 - 0x19e] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[96 - 0x1a8] INSTR_OP05 b'\xc0\x01\x00\x00' // memory[0x1c0] = [unsigned int* memory[0x3d]]
+[99 - 0x1b7] INSTR_OP32 b'\x03\x00\x00\x00' // memory[0x1db] = 0x3
+[101 - 0x1c1] INSTR_OP0D b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1c0] + (int)memory[0x1db]
+[104 - 0x1d0] INSTR_OP0E b'\xc0\x01\x00\x00' // memory[0x1c0] = (int)memory[0x1bc] ^ (int)memory[0x1c4]
+[106 - 0x1da] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x3d]]
+[109 - 0x1e9] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1db] = 0x8
+[111 - 0x1f3] INSTR_OP0F b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1bb] % (int)memory[0x1db]
+[114 - 0x202] INSTR_OP10 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c0] >> (int)memory[0x1c4]
+[116 - 0x20c] INSTR_OP08 b'\xbf\x01\x00\x00' // memory[0x1bf] = [int* memory[0x21]]
+[118 - 0x216] INSTR_OP05 b'\xc7\x01\x00\x00' // memory[0x1c7] = [unsigned int* memory[0x3d]]
+[120 - 0x220] INSTR_OP09 b'\xcb\x01\x00\x00' // memory[0x1cb] = memory[0x1c7]
+[123 - 0x22f] INSTR_OP0A b'\xd3\x01\x00\x00' // memory[0x1d3] = (char)memory[0x1bf] + (long)memory[0x1cb]
+[125 - 0x239] INSTR_OP0B b'\xbf\x01\x00\x00' // memory[0x1bf] = [BYTE* memory[0x1d3]]
+[127 - 0x243] INSTR_OP0C b'\xc0\x01\x00\x00' // memory[0x1c0] = memory[0x1bf]
+[129 - 0x24d] INSTR_OP05 b'\xc4\x01\x00\x00' // memory[0x1c4] = [unsigned int* memory[0x3d]]
+[132 - 0x25c] INSTR_OP32 b'\x03\x00\x00\x00' // memory[0x1db] = 0x3
+[134 - 0x266] INSTR_OP0D b'\xc8\x01\x00\x00' // memory[0x1c8] = (int)memory[0x1c4] + (int)memory[0x1db]
+[137 - 0x275] INSTR_OP0E b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1c0] ^ (int)memory[0x1c8]
+[139 - 0x27f] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x3d]]
+[142 - 0x28e] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1db] = 0x8
+[144 - 0x298] INSTR_OP0F b'\xc8\x01\x00\x00' // memory[0x1c8] = (int)memory[0x1bf] % (int)memory[0x1db]
+[146 - 0x2a2] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1db] = 0x8
+[149 - 0x2b1] INSTR_OP11 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1db] - (int)memory[0x1c8]
+[152 - 0x2c0] INSTR_OP12 b'\xc8\x01\x00\x00' // memory[0x1c8] = (int)memory[0x1c4] << (int)memory[0x1bf]
+[155 - 0x2cf] INSTR_OP13 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] | (int)memory[0x1c8]
+[157 - 0x2d9] INSTR_OP14 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf]
+[159 - 0x2e3] INSTR_OP08 b'\xbc\x01\x00\x00' // memory[0x1bc] = [int* memory[0x21]]
+[161 - 0x2ed] INSTR_OP05 b'\xc4\x01\x00\x00' // memory[0x1c4] = [unsigned int* memory[0x3d]]
+[163 - 0x2f7] INSTR_OP09 b'\xc8\x01\x00\x00' // memory[0x1c8] = memory[0x1c4]
+[166 - 0x306] INSTR_OP0A b'\xd0\x01\x00\x00' // memory[0x1d0] = (char)memory[0x1bc] + (long)memory[0x1c8]
+[169 - 0x315] INSTR_OP15 b'' // [BYTE* memory[0x1d0]] = memory[0x1bb]
+[171 - 0x31b] INSTR_OP32 b'Vp\x19\x04' // memory[0x1db] = 0x4197056
+[174 - 0x32a] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1db]
+[176 - 0x330] INSTR_OP30 b'\x01' // memory[0x1db] = 0x1
+[178 - 0x337] INSTR_OP04 b'\x19\xfd\xff\xff' // JUMPI if memory[0x1db] can jump to 0x51
+[180 - 0x341] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x3d]]
+[183 - 0x350] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[185 - 0x35a] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[188 - 0x369] INSTR_OP02 b'' // [unsigned int* memory[0x3d]] = memory[0x1bf]
+[190 - 0x36f] INSTR_OP32 b'\xbb\x1c\xf2\x00' // memory[0x1c3] = 0xf21cbb
+[193 - 0x37e] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[195 - 0x384] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[197 - 0x38b] INSTR_OP04 b'\xc5\xfc\xff\xff' // JUMPI if memory[0x1c3] can jump to 0x51
+[199 - 0x395] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x21]]
+[202 - 0x3a4] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1cb] = 0x0
+[204 - 0x3b2] INSTR_OP0A b'\xc3\x01\x00\x00' // memory[0x1c3] = (char)memory[0x1bb] + (long)memory[0x1cb]
+[206 - 0x3bc] INSTR_OP16 b'\xbb\x01\x00\x00' // memory[0x1bb] = (unsigned int*)memory[0x1c3]
+[208 - 0x3c6] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x1bb]]
+[211 - 0x3d5] INSTR_OP02 b'' // [unsigned int* memory[0x49]] = memory[0x1c3]
+[213 - 0x3db] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x21]]
+[216 - 0x3ea] INSTR_OP32 b'\x04\x00\x00\x00\x00\x00\x00\x00' // memory[0x1cb] = 0x4
+[218 - 0x3f8] INSTR_OP0A b'\xc3\x01\x00\x00' // memory[0x1c3] = (char)memory[0x1bb] + (long)memory[0x1cb]
+[220 - 0x402] INSTR_OP16 b'\xbb\x01\x00\x00' // memory[0x1bb] = (unsigned int*)memory[0x1c3]
+[222 - 0x40c] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x1bb]]
+[225 - 0x41b] INSTR_OP02 b'' // [unsigned int* memory[0x55]] = memory[0x1c3]
+[227 - 0x421] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x21]]
+[230 - 0x430] INSTR_OP32 b'\x08\x00\x00\x00\x00\x00\x00\x00' // memory[0x1cb] = 0x8
+[232 - 0x43e] INSTR_OP0A b'\xc3\x01\x00\x00' // memory[0x1c3] = (char)memory[0x1bb] + (long)memory[0x1cb]
+[234 - 0x448] INSTR_OP16 b'\xbb\x01\x00\x00' // memory[0x1bb] = (unsigned int*)memory[0x1c3]
+[236 - 0x452] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x1bb]]
+[239 - 0x461] INSTR_OP02 b'' // [unsigned int* memory[0x61]] = memory[0x1c3]
+[241 - 0x467] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x21]]
+[244 - 0x476] INSTR_OP32 b'\x0c\x00\x00\x00\x00\x00\x00\x00' // memory[0x1cb] = 0xc
+[246 - 0x484] INSTR_OP0A b'\xc3\x01\x00\x00' // memory[0x1c3] = (char)memory[0x1bb] + (long)memory[0x1cb]
+[248 - 0x48e] INSTR_OP16 b'\xbb\x01\x00\x00' // memory[0x1bb] = (unsigned int*)memory[0x1c3]
+[250 - 0x498] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x1bb]]
+[253 - 0x4a7] INSTR_OP02 b'' // [unsigned int* memory[0x6d]] = memory[0x1c3]
+[255 - 0x4ad] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1cb] = 0x0
+[258 - 0x4bc] INSTR_OP02 b'' // [unsigned int* memory[0x109]] = memory[0x1cb]
+[260 - 0x4c2] INSTR_OP32 b'K\x1d\xf8\n' // memory[0x1cb] = 0xaf81d4b
+[263 - 0x4d1] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1cb]
+[265 - 0x4d7] INSTR_OP30 b'\x01' // memory[0x1cb] = 0x1
+[267 - 0x4de] INSTR_OP04 b'r\xfb\xff\xff' // JUMPI if memory[0x1cb] can jump to 0x51
+[269 - 0x4e8] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x109]]
+[272 - 0x4f7] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1c0] = 0x4
+[274 - 0x501] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[277 - 0x510] INSTR_OP32 b' ,\xcf\r' // memory[0x1c0] = 0xdcf2c20
+[280 - 0x51f] INSTR_OP32 b'\x11q\x80\x12' // memory[0x1c4] = 0x12807111
+[282 - 0x529] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[285 - 0x538] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[287 - 0x53e] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[289 - 0x545] INSTR_OP04 b'\x1c\xfb\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x62
+[291 - 0x54f] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x55]]
+[293 - 0x559] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x61]]
+[296 - 0x568] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] * (int)memory[0x1bf]
+[299 - 0x577] INSTR_OP32 b'\xef\xbf\xad\xde' // memory[0x1d7] = 0xdeadbfef
+[301 - 0x581] INSTR_OP18 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] & (int)memory[0x1d7]
+[303 - 0x58b] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x49]]
+[306 - 0x59a] INSTR_OP32 b'\x03\x00\x00\x00' // memory[0x1d7] = 0x3
+[308 - 0x5a4] INSTR_OP12 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bf] << (int)memory[0x1d7]
+[311 - 0x5b3] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[313 - 0x5bd] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x6d]]
+[316 - 0x5cc] INSTR_OP32 b'\x1d\x00\x00\x00' // memory[0x1d7] = 0x1d
+[318 - 0x5d6] INSTR_OP19 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] >> (int)memory[0x1d7]
+[321 - 0x5e5] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1bf] + (int)memory[0x1c3]
+[324 - 0x5f4] INSTR_OP02 b'' // [unsigned int* memory[0x49]] = memory[0x1bb]
+[326 - 0x5fa] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x61]]
+[328 - 0x604] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x6d]]
+[331 - 0x613] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] * (int)memory[0x1bf]
+[334 - 0x622] INSTR_OP32 b'\xef\xbe\xfd\xde' // memory[0x1d7] = 0xdefdbeef
+[336 - 0x62c] INSTR_OP18 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] & (int)memory[0x1d7]
+[338 - 0x636] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x55]]
+[341 - 0x645] INSTR_OP32 b'\x07\x00\x00\x00' // memory[0x1d7] = 0x7
+[343 - 0x64f] INSTR_OP12 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bf] << (int)memory[0x1d7]
+[346 - 0x65e] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[348 - 0x668] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x49]]
+[351 - 0x677] INSTR_OP32 b'\x19\x00\x00\x00' // memory[0x1d7] = 0x19
+[353 - 0x681] INSTR_OP19 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] >> (int)memory[0x1d7]
+[356 - 0x690] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1bf] + (int)memory[0x1c3]
+[359 - 0x69f] INSTR_OP02 b'' // [unsigned int* memory[0x55]] = memory[0x1bb]
+[361 - 0x6a5] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x6d]]
+[363 - 0x6af] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x49]]
+[366 - 0x6be] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] * (int)memory[0x1bf]
+[369 - 0x6cd] INSTR_OP32 b'\xef\xbe\xad\xdf' // memory[0x1d7] = 0xdfadbeef
+[371 - 0x6d7] INSTR_OP18 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] & (int)memory[0x1d7]
+[373 - 0x6e1] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x61]]
+[376 - 0x6f0] INSTR_OP32 b'\t\x00\x00\x00' // memory[0x1d7] = 0x9
+[378 - 0x6fa] INSTR_OP12 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bf] << (int)memory[0x1d7]
+[381 - 0x709] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[383 - 0x713] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x55]]
+[386 - 0x722] INSTR_OP32 b'\x17\x00\x00\x00' // memory[0x1d7] = 0x17
+[388 - 0x72c] INSTR_OP19 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] >> (int)memory[0x1d7]
+[391 - 0x73b] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1bf] + (int)memory[0x1c3]
+[394 - 0x74a] INSTR_OP02 b'' // [unsigned int* memory[0x61]] = memory[0x1bb]
+[396 - 0x750] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x49]]
+[398 - 0x75a] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x55]]
+[401 - 0x769] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] * (int)memory[0x1bf]
+[404 - 0x778] INSTR_OP32 b'\xff\xbe\xad\xde' // memory[0x1d7] = 0xdeadbeff
+[406 - 0x782] INSTR_OP18 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] & (int)memory[0x1d7]
+[408 - 0x78c] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x6d]]
+[411 - 0x79b] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1d7] = 0x1
+[413 - 0x7a5] INSTR_OP12 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bf] << (int)memory[0x1d7]
+[416 - 0x7b4] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[418 - 0x7be] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x61]]
+[421 - 0x7cd] INSTR_OP32 b'\x1f\x00\x00\x00' // memory[0x1d7] = 0x1f
+[423 - 0x7d7] INSTR_OP19 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] >> (int)memory[0x1d7]
+[426 - 0x7e6] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1bf] + (int)memory[0x1c3]
+[429 - 0x7f5] INSTR_OP02 b'' // [unsigned int* memory[0x6d]] = memory[0x1bb]
+[431 - 0x7fb] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x6d]]
+[434 - 0x80a] INSTR_OP32 b'\xef\xbe\xad\xde' // memory[0x1d7] = 0xdeadbeef
+[436 - 0x814] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1d7]
+[438 - 0x81e] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x109]]
+[440 - 0x828] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1d7] = 0x4
+[443 - 0x837] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1d7] * (int)memory[0x1bb]
+[445 - 0x841] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[448 - 0x850] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d7] = 0x0
+[451 - 0x863] INSTR_OP1A b'\xcf\x01\x00\x00' // memory[0x1cf] = &memory[0xb5][16 * memory[0x1d7] + memory[0x1c7]]
+[454 - 0x872] INSTR_OP02 b'' // [unsigned int* memory[0x1cf]] = memory[0x1bf]
+[456 - 0x878] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x61]]
+[459 - 0x887] INSTR_OP32 b'\x14E\x11\xaa' // memory[0x1d7] = 0xaa114514
+[461 - 0x891] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1d7]
+[463 - 0x89b] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x109]]
+[465 - 0x8a5] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1d7] = 0x4
+[468 - 0x8b4] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1d7] * (int)memory[0x1bb]
+[471 - 0x8c3] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1d7] = 0x1
+[473 - 0x8cd] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] + (int)memory[0x1d7]
+[475 - 0x8d7] INSTR_OP09 b'\xc3\x01\x00\x00' // memory[0x1c3] = memory[0x1bb]
+[478 - 0x8e6] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d7] = 0x0
+[481 - 0x8f9] INSTR_OP1A b'\xcb\x01\x00\x00' // memory[0x1cb] = &memory[0xb5][16 * memory[0x1d7] + memory[0x1c3]]
+[484 - 0x908] INSTR_OP02 b'' // [unsigned int* memory[0x1cb]] = memory[0x1bf]
+[486 - 0x90e] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x49]]
+[489 - 0x91d] INSTR_OP32 b'\x10\x98\x91\xf1' // memory[0x1d7] = 0xf1919810
+[491 - 0x927] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1d7]
+[493 - 0x931] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x109]]
+[495 - 0x93b] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1d7] = 0x4
+[498 - 0x94a] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1d7] * (int)memory[0x1bb]
+[501 - 0x959] INSTR_OP32 b'\x02\x00\x00\x00' // memory[0x1d7] = 0x2
+[503 - 0x963] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] + (int)memory[0x1d7]
+[505 - 0x96d] INSTR_OP09 b'\xc3\x01\x00\x00' // memory[0x1c3] = memory[0x1bb]
+[508 - 0x97c] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d7] = 0x0
+[511 - 0x98f] INSTR_OP1A b'\xcb\x01\x00\x00' // memory[0x1cb] = &memory[0xb5][16 * memory[0x1d7] + memory[0x1c3]]
+[514 - 0x99e] INSTR_OP02 b'' // [unsigned int* memory[0x1cb]] = memory[0x1bf]
+[516 - 0x9a4] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x55]]
+[519 - 0x9b3] INSTR_OP32 b'\xf1\xde\xbc\x1a' // memory[0x1d7] = 0x1abcdef1
+[521 - 0x9bd] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1d7]
+[523 - 0x9c7] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x109]]
+[525 - 0x9d1] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1d7] = 0x4
+[528 - 0x9e0] INSTR_OP17 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1d7] * (int)memory[0x1bb]
+[531 - 0x9ef] INSTR_OP32 b'\x03\x00\x00\x00' // memory[0x1d7] = 0x3
+[533 - 0x9f9] INSTR_OP0D b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] + (int)memory[0x1d7]
+[535 - 0xa03] INSTR_OP09 b'\xc3\x01\x00\x00' // memory[0x1c3] = memory[0x1bb]
+[538 - 0xa12] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d7] = 0x0
+[541 - 0xa25] INSTR_OP1A b'\xcb\x01\x00\x00' // memory[0x1cb] = &memory[0xb5][16 * memory[0x1d7] + memory[0x1c3]]
+[544 - 0xa34] INSTR_OP02 b'' // [unsigned int* memory[0x1cb]] = memory[0x1bf]
+[546 - 0xa3a] INSTR_OP32 b'\xbc/\x16\x12' // memory[0x1d7] = 0x12162fbc
+[549 - 0xa49] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1d7]
+[551 - 0xa4f] INSTR_OP30 b'\x01' // memory[0x1d7] = 0x1
+[553 - 0xa56] INSTR_OP04 b'\x0b\xf6\xff\xff' // JUMPI if memory[0x1d7] can jump to 0x62
+[555 - 0xa60] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x109]]
+[558 - 0xa6f] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[560 - 0xa79] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[563 - 0xa88] INSTR_OP02 b'' // [unsigned int* memory[0x109]] = memory[0x1bf]
+[565 - 0xa8e] INSTR_OP32 b'K\x1d\xf8\n' // memory[0x1c3] = 0xaf81d4b
+[568 - 0xa9d] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[570 - 0xaa3] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[572 - 0xaaa] INSTR_OP04 b'\xb7\xf5\xff\xff' // JUMPI if memory[0x1c3] can jump to 0x62
+[574 - 0xab4] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1bb] = 0x0
+[577 - 0xac3] INSTR_OP02 b'' // [unsigned int* memory[0x115]] = memory[0x1bb]
+[579 - 0xac9] INSTR_OP32 b'"cI\x14' // memory[0x1bb] = 0x14496322
+[582 - 0xad8] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[584 - 0xade] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[586 - 0xae5] INSTR_OP04 b'|\xf5\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x62
+[588 - 0xaef] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x115]]
+[591 - 0xafe] INSTR_OP32 b' \x00\x00\x00' // memory[0x1c0] = 0x20
+[593 - 0xb08] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[596 - 0xb17] INSTR_OP32 b'6O\xa4\x17' // memory[0x1c0] = 0x17a44f36
+[599 - 0xb26] INSTR_OP32 b'\xb7\x15\xff.' // memory[0x1c4] = 0x2eff15b7
+[601 - 0xb30] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[604 - 0xb3f] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[606 - 0xb45] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[608 - 0xb4c] INSTR_OP04 b'&\xf5\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x73
+[610 - 0xb56] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x31]]
+[612 - 0xb60] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x115]]
+[614 - 0xb6a] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[617 - 0xb79] INSTR_OP0A b'\xcf\x01\x00\x00' // memory[0x1cf] = (char)memory[0x1bb] + (long)memory[0x1c7]
+[619 - 0xb83] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1cf]]
+[622 - 0xb92] INSTR_OP15 b'' // [BYTE* memory[0x11e]] = memory[0x1bb]
+[624 - 0xb98] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x11e]]
+[626 - 0xba2] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[629 - 0xbb1] INSTR_OP32 b'\xaa\x00\x00\x00' // memory[0x1d8] = 0xaa
+[631 - 0xbbb] INSTR_OP18 b'\xc0\x01\x00\x00' // memory[0x1c0] = (int)memory[0x1bc] & (int)memory[0x1d8]
+[634 - 0xbca] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1d8] = 0x1
+[636 - 0xbd4] INSTR_OP10 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c0] >> (int)memory[0x1d8]
+[638 - 0xbde] INSTR_OP0B b'\xbf\x01\x00\x00' // memory[0x1bf] = [BYTE* memory[0x11e]]
+[640 - 0xbe8] INSTR_OP0C b'\xc0\x01\x00\x00' // memory[0x1c0] = memory[0x1bf]
+[643 - 0xbf7] INSTR_OP32 b'U\x00\x00\x00' // memory[0x1d8] = 0x55
+[645 - 0xc01] INSTR_OP18 b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1c0] & (int)memory[0x1d8]
+[648 - 0xc10] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1d8] = 0x1
+[650 - 0xc1a] INSTR_OP12 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1c4] << (int)memory[0x1d8]
+[653 - 0xc29] INSTR_OP13 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] | (int)memory[0x1bf]
+[655 - 0xc33] INSTR_OP14 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1c3]
+[658 - 0xc42] INSTR_OP15 b'' // [BYTE* memory[0x11e]] = memory[0x1bb]
+[660 - 0xc48] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x11e]]
+[662 - 0xc52] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[665 - 0xc61] INSTR_OP32 b'\xcc\x00\x00\x00' // memory[0x1d8] = 0xcc
+[667 - 0xc6b] INSTR_OP18 b'\xc0\x01\x00\x00' // memory[0x1c0] = (int)memory[0x1bc] & (int)memory[0x1d8]
+[670 - 0xc7a] INSTR_OP32 b'\x02\x00\x00\x00' // memory[0x1d8] = 0x2
+[672 - 0xc84] INSTR_OP10 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c0] >> (int)memory[0x1d8]
+[674 - 0xc8e] INSTR_OP0B b'\xbf\x01\x00\x00' // memory[0x1bf] = [BYTE* memory[0x11e]]
+[676 - 0xc98] INSTR_OP0C b'\xc0\x01\x00\x00' // memory[0x1c0] = memory[0x1bf]
+[679 - 0xca7] INSTR_OP32 b'3\x00\x00\x00' // memory[0x1d8] = 0x33
+[681 - 0xcb1] INSTR_OP18 b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1c0] & (int)memory[0x1d8]
+[684 - 0xcc0] INSTR_OP32 b'\x02\x00\x00\x00' // memory[0x1d8] = 0x2
+[686 - 0xcca] INSTR_OP12 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1c4] << (int)memory[0x1d8]
+[689 - 0xcd9] INSTR_OP13 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] | (int)memory[0x1bf]
+[691 - 0xce3] INSTR_OP14 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1c3]
+[694 - 0xcf2] INSTR_OP15 b'' // [BYTE* memory[0x11e]] = memory[0x1bb]
+[696 - 0xcf8] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x11e]]
+[698 - 0xd02] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[701 - 0xd11] INSTR_OP32 b'\xf0\x00\x00\x00' // memory[0x1d8] = 0xf0
+[703 - 0xd1b] INSTR_OP18 b'\xc0\x01\x00\x00' // memory[0x1c0] = (int)memory[0x1bc] & (int)memory[0x1d8]
+[706 - 0xd2a] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1d8] = 0x4
+[708 - 0xd34] INSTR_OP10 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c0] >> (int)memory[0x1d8]
+[710 - 0xd3e] INSTR_OP0B b'\xbf\x01\x00\x00' // memory[0x1bf] = [BYTE* memory[0x11e]]
+[712 - 0xd48] INSTR_OP0C b'\xc0\x01\x00\x00' // memory[0x1c0] = memory[0x1bf]
+[715 - 0xd57] INSTR_OP32 b'\x0f\x00\x00\x00' // memory[0x1d8] = 0xf
+[717 - 0xd61] INSTR_OP18 b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1c0] & (int)memory[0x1d8]
+[720 - 0xd70] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1d8] = 0x4
+[722 - 0xd7a] INSTR_OP12 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1c4] << (int)memory[0x1d8]
+[725 - 0xd89] INSTR_OP13 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] | (int)memory[0x1bf]
+[727 - 0xd93] INSTR_OP14 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1c3]
+[730 - 0xda2] INSTR_OP15 b'' // [BYTE* memory[0x11e]] = memory[0x1bb]
+[732 - 0xda8] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x11e]]
+[734 - 0xdb2] INSTR_OP08 b'\xbc\x01\x00\x00' // memory[0x1bc] = [int* memory[0x31]]
+[736 - 0xdbc] INSTR_OP05 b'\xc4\x01\x00\x00' // memory[0x1c4] = [unsigned int* memory[0x115]]
+[738 - 0xdc6] INSTR_OP09 b'\xc8\x01\x00\x00' // memory[0x1c8] = memory[0x1c4]
+[741 - 0xdd5] INSTR_OP0A b'\xd0\x01\x00\x00' // memory[0x1d0] = (char)memory[0x1bc] + (long)memory[0x1c8]
+[744 - 0xde4] INSTR_OP15 b'' // [BYTE* memory[0x1d0]] = memory[0x1bb]
+[746 - 0xdea] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1d8] = 0x0
+[749 - 0xdf9] INSTR_OP02 b'' // [unsigned int* memory[0x12a]] = memory[0x1d8]
+[751 - 0xdff] INSTR_OP32 b'\x0c\xd9\x94\x18' // memory[0x1d8] = 0x1894d90c
+[754 - 0xe0e] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1d8]
+[756 - 0xe14] INSTR_OP30 b'\x01' // memory[0x1d8] = 0x1
+[758 - 0xe1b] INSTR_OP04 b'W\xf2\xff\xff' // JUMPI if memory[0x1d8] can jump to 0x73
+[760 - 0xe25] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x12a]]
+[763 - 0xe34] INSTR_OP32 b' \x00\x00\x00' // memory[0x1c0] = 0x20
+[765 - 0xe3e] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[768 - 0xe4d] INSTR_OP32 b'\xe8\xd6G\x19' // memory[0x1c0] = 0x1947d6e8
+[771 - 0xe5c] INSTR_OP32 b'\xd9\xb9`\x1a' // memory[0x1c4] = 0x1a60b9d9
+[773 - 0xe66] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[776 - 0xe75] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[778 - 0xe7b] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[780 - 0xe82] INSTR_OP04 b'\xf0\xf1\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x73
+[782 - 0xe8c] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x12a]]
+[785 - 0xe9b] INSTR_OP32 b'\x10\x00\x00\x00' // memory[0x1db] = 0x10
+[787 - 0xea5] INSTR_OP0F b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] % (int)memory[0x1db]
+[789 - 0xeaf] INSTR_OP09 b'\xc3\x01\x00\x00' // memory[0x1c3] = memory[0x1bf]
+[792 - 0xebe] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1db] = 0x0
+[795 - 0xed1] INSTR_OP1A b'\xbb\x01\x00\x00' // memory[0x1bb] = &memory[0xb5][16 * memory[0x1db] + memory[0x1c3]]
+[797 - 0xedb] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x1bb]]
+[799 - 0xee5] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x12a]]
+[802 - 0xef4] INSTR_OP19 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1c3] >> (int)memory[0x1bb]
+[804 - 0xefe] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x12a]]
+[807 - 0xf0d] INSTR_OP32 b'\x10\x00\x00\x00' // memory[0x1db] = 0x10
+[809 - 0xf17] INSTR_OP0F b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] % (int)memory[0x1db]
+[811 - 0xf21] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[814 - 0xf30] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1db] = 0x0
+[817 - 0xf43] INSTR_OP1A b'\xcf\x01\x00\x00' // memory[0x1cf] = &memory[0xb5][16 * memory[0x1db] + memory[0x1c7]]
+[819 - 0xf4d] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x1cf]]
+[821 - 0xf57] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x12a]]
+[823 - 0xf61] INSTR_OP32 b' \x00\x00\x00' // memory[0x1db] = 0x20
+[826 - 0xf70] INSTR_OP11 b'\xc7\x01\x00\x00' // memory[0x1c7] = (int)memory[0x1db] - (int)memory[0x1c3]
+[829 - 0xf7f] INSTR_OP12 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] << (int)memory[0x1c7]
+[832 - 0xf8e] INSTR_OP13 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1bf] | (int)memory[0x1c3]
+[835 - 0xf9d] INSTR_OP32 b'\xff\x00\x00\x00' // memory[0x1db] = 0xff
+[837 - 0xfa7] INSTR_OP18 b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] & (int)memory[0x1db]
+[839 - 0xfb1] INSTR_OP08 b'\xc3\x01\x00\x00' // memory[0x1c3] = [int* memory[0x31]]
+[841 - 0xfbb] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x12a]]
+[843 - 0xfc5] INSTR_OP09 b'\xcb\x01\x00\x00' // memory[0x1cb] = memory[0x1bb]
+[846 - 0xfd4] INSTR_OP0A b'\xd3\x01\x00\x00' // memory[0x1d3] = (char)memory[0x1c3] + (long)memory[0x1cb]
+[848 - 0xfde] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1d3]]
+[850 - 0xfe8] INSTR_OP0C b'\xc3\x01\x00\x00' // memory[0x1c3] = memory[0x1bb]
+[853 - 0xff7] INSTR_OP0E b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] ^ (int)memory[0x1bf]
+[855 - 0x1001] INSTR_OP14 b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb]
+[858 - 0x1010] INSTR_OP15 b'' // [BYTE* memory[0x1d3]] = memory[0x1bf]
+[860 - 0x1016] INSTR_OP32 b'\x8e\x86[\x19' // memory[0x1db] = 0x195b868e
+[863 - 0x1025] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1db]
+[865 - 0x102b] INSTR_OP30 b'\x01' // memory[0x1db] = 0x1
+[867 - 0x1032] INSTR_OP04 b'@\xf0\xff\xff' // JUMPI if memory[0x1db] can jump to 0x73
+
+[869 - 0x103c] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x12a]]
+[872 - 0x104b] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[874 - 0x1055] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[877 - 0x1064] INSTR_OP02 b'' // [unsigned int* memory[0x12a]] = memory[0x1bf]
+[879 - 0x106a] INSTR_OP32 b'\x0c\xd9\x94\x18' // memory[0x1c3] = 0x1894d90c
+[882 - 0x1079] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[884 - 0x107f] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[886 - 0x1086] INSTR_OP04 b'\xfd\xef\xff\xff' // JUMPI if memory[0x1c3] can jump to 0x84
+
+[889 - 0x1095] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1cb] = 0x0
+[892 - 0x10a8] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d3] = 0x0
+[894 - 0x10b6] INSTR_OP1A b'\xbb\x01\x00\x00' // memory[0x1bb] = &memory[0xfd][16 * memory[0x1cb] + memory[0x1d3]]
+[897 - 0x10c5] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1cb] = 0x0
+[900 - 0x10d8] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d3] = 0x0
+[902 - 0x10e6] INSTR_OP1A b'\xc3\x01\x00\x00' // memory[0x1c3] = &memory[0xb5][16 * memory[0x1cb] + memory[0x1d3]]
+[905 - 0x10f5] INSTR_OP1B b'' // function1(memory[0x1bb], memory[0x1c3]
+[907 - 0x10fb] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1cb] = 0x0
+[910 - 0x110a] INSTR_OP02 b'' // [unsigned int* memory[0x136]] = memory[0x1cb]
+[912 - 0x1110] INSTR_OP32 b'y\xe3p\x1b' // memory[0x1cb] = 0x1b70e379
+[915 - 0x111f] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1cb]
+[917 - 0x1125] INSTR_OP30 b'\x01' // memory[0x1cb] = 0x1
+[919 - 0x112c] INSTR_OP04 b'W\xef\xff\xff' // JUMPI if memory[0x1cb] can jump to 0x84
+
+[921 - 0x1136] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x136]]
+[924 - 0x1145] INSTR_OP32 b'\x10\x00\x00\x00' // memory[0x1c0] = 0x10
+[926 - 0x114f] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[929 - 0x115e] INSTR_OP32 b'A{\xee(' // memory[0x1c0] = 0x28ee7b41
+[932 - 0x116d] INSTR_OP32 b'sw\x98*' // memory[0x1c4] = 0x2a987773
+[934 - 0x1177] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[937 - 0x1186] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[939 - 0x118c] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[941 - 0x1193] INSTR_OP04 b'\xf0\xee\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x84
+
+[943 - 0x119d] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x136]]
+[945 - 0x11a7] INSTR_OP09 b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb]
+[948 - 0x11b6] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d3] = 0x0
+[951 - 0x11c9] INSTR_OP1A b'\xc7\x01\x00\x00' // memory[0x1c7] = &memory[0xfd][16 * memory[0x1d3] + memory[0x1bf]]
+[953 - 0x11d3] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x1c7]]
+[955 - 0x11dd] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x136]]
+[957 - 0x11e7] INSTR_OP09 b'\xc3\x01\x00\x00' // memory[0x1c3] = memory[0x1bf]
+[960 - 0x11f6] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d3] = 0x0
+[963 - 0x1209] INSTR_OP1A b'\xcb\x01\x00\x00' // memory[0x1cb] = &memory[0xb5][16 * memory[0x1d3] + memory[0x1c3]]
+[966 - 0x1218] INSTR_OP02 b'' // [unsigned int* memory[0x1cb]] = memory[0x1bb]
+[968 - 0x121e] INSTR_OP32 b'\xec\x8bn*' // memory[0x1d3] = 0x2a6e8bec
+[971 - 0x122d] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1d3]
+[973 - 0x1233] INSTR_OP30 b'\x01' // memory[0x1d3] = 0x1
+[975 - 0x123a] INSTR_OP04 b'I\xee\xff\xff' // JUMPI if memory[0x1d3] can jump to 0x84
+
+[977 - 0x1244] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x136]]
+[980 - 0x1253] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[982 - 0x125d] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[985 - 0x126c] INSTR_OP02 b'' // [unsigned int* memory[0x136]] = memory[0x1bf]
+[987 - 0x1272] INSTR_OP32 b'y\xe3p\x1b' // memory[0x1c3] = 0x1b70e379
+[990 - 0x1281] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[992 - 0x1287] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[994 - 0x128e] INSTR_OP04 b'\x06\xee\xff\xff' // JUMPI if memory[0x1c3] can jump to 0x95
+
+[996 - 0x1298] INSTR_OP32 b'\x12\xe3\xe0+' // memory[0x1bb] = 0x2be0e312
+[999 - 0x12a7] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1001 - 0x12ad] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1003 - 0x12b4] INSTR_OP04 b'\xe0\xed\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x95
+
+[1005 - 0x12be] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x115]]
+[1008 - 0x12cd] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[1010 - 0x12d7] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[1013 - 0x12e6] INSTR_OP02 b'' // [unsigned int* memory[0x115]] = memory[0x1bf]
+[1015 - 0x12ec] INSTR_OP32 b'"cI\x14' // memory[0x1c3] = 0x14496322
+[1018 - 0x12fb] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[1020 - 0x1301] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[1022 - 0x1308] INSTR_OP04 b'\x8c\xed\xff\xff' // JUMPI if memory[0x1c3] can jump to 0x95
+
+[1024 - 0x1312] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1bb] = 0x0
+[1027 - 0x1321] INSTR_OP02 b'' // [unsigned int* memory[0x142]] = memory[0x1bb]
+[1029 - 0x1327] INSTR_OP32 b'w~\x1a7' // memory[0x1bb] = 0x371a7e77
+[1032 - 0x1336] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1034 - 0x133c] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1036 - 0x1343] INSTR_OP04 b'Q\xed\xff\xff' // JUMPI if memory[0x1bb] can jump to 0x95
+
+[1038 - 0x134d] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x142]]
+[1041 - 0x135c] INSTR_OP32 b'\x04\x00\x00\x00' // memory[0x1c0] = 0x4
+[1043 - 0x1366] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[1046 - 0x1375] INSTR_OP32 b'P7\xb4I' // memory[0x1c0] = 0x49b43750
+[1049 - 0x1384] INSTR_OP32 b'\xaf\x19\x1bW' // memory[0x1c4] = 0x571b19af
+[1051 - 0x138e] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[1054 - 0x139d] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1056 - 0x13a3] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1058 - 0x13aa] INSTR_OP04 b'\xfb\xec\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xa6
+
+[1060 - 0x13b4] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x31]]
+[1062 - 0x13be] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x142]]
+[1064 - 0x13c8] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1d3] = 0x8
+[1067 - 0x13d7] INSTR_OP17 b'\xc7\x01\x00\x00' // memory[0x1c7] = (int)memory[0x1d3] * (int)memory[0x1c3]
+[1069 - 0x13e1] INSTR_OP09 b'\xcb\x01\x00\x00' // memory[0x1cb] = memory[0x1c7]
+[1072 - 0x13f0] INSTR_OP0A b'\xc3\x01\x00\x00' // memory[0x1c3] = (char)memory[0x1bb] + (long)memory[0x1cb]
+[1074 - 0x13fa] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1c3]]
+[1077 - 0x1409] INSTR_OP15 b'' // [BYTE* memory[0x14b]] = memory[0x1bb]
+[1079 - 0x140f] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1d3] = 0x0
+[1082 - 0x141e] INSTR_OP02 b'' // [unsigned int* memory[0x157]] = memory[0x1d3]
+[1084 - 0x1424] INSTR_OP32 b'\xeb\xa9\xb7K' // memory[0x1d3] = 0x4bb7a9eb
+[1087 - 0x1433] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1d3]
+[1089 - 0x1439] INSTR_OP30 b'\x01' // memory[0x1d3] = 0x1
+[1091 - 0x1440] INSTR_OP04 b'e\xec\xff\xff' // JUMPI if memory[0x1d3] can jump to 0xa6
+
+[1093 - 0x144a] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x157]]
+[1096 - 0x1459] INSTR_OP32 b'd\x00\x00\x00' // memory[0x1c0] = 0x64
+[1098 - 0x1463] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[1101 - 0x1472] INSTR_OP32 b'\x9b\xba\xf0N' // memory[0x1c0] = 0x4ef0ba9b
+[1104 - 0x1481] INSTR_OP32 b'_\xa9\xb1V' // memory[0x1c4] = 0x56b1a95f
+[1106 - 0x148b] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[1109 - 0x149a] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1111 - 0x14a0] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1113 - 0x14a7] INSTR_OP04 b'\xfe\xeb\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xa6
+
+[1115 - 0x14b1] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1bb] = 0x0
+[1118 - 0x14c0] INSTR_OP02 b'' // [unsigned int* memory[0x163]] = memory[0x1bb]
+[1120 - 0x14c6] INSTR_OP32 b'\xce?\x06P' // memory[0x1bb] = 0x50063fce
+[1123 - 0x14d5] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1125 - 0x14db] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1127 - 0x14e2] INSTR_OP04 b'\xc3\xeb\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xa6
+
+[1129 - 0x14ec] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x163]]
+[1132 - 0x14fb] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1c0] = 0x8
+[1134 - 0x1505] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[1137 - 0x1514] INSTR_OP32 b'5L\xc1S' // memory[0x1c0] = 0x53c14c35
+[1140 - 0x1523] INSTR_OP32 b'\x8f\xcegU' // memory[0x1c4] = 0x5567ce8f
+[1142 - 0x152d] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[1145 - 0x153c] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1147 - 0x1542] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1149 - 0x1549] INSTR_OP04 b'm\xeb\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xb7
+
+[1151 - 0x1553] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x14b]]
+[1153 - 0x155d] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[1155 - 0x1567] INSTR_OP08 b'\xc0\x01\x00\x00' // memory[0x1c0] = [int* memory[0x21]] // key
+[1157 - 0x1571] INSTR_OP05 b'\xc8\x01\x00\x00' // memory[0x1c8] = [unsigned int* memory[0x163]]
+[1159 - 0x157b] INSTR_OP32 b'\x02\x00\x00\x00' // memory[0x1e0] = 0x2
+[1162 - 0x158a] INSTR_OP17 b'\xcc\x01\x00\x00' // memory[0x1cc] = (int)memory[0x1e0] * (int)memory[0x1c8]
+[1164 - 0x1594] INSTR_OP09 b'\xd0\x01\x00\x00' // memory[0x1d0] = memory[0x1cc]
+[1167 - 0x15a3] INSTR_OP0A b'\xc8\x01\x00\x00' // memory[0x1c8] = (char)memory[0x1c0] + (long)memory[0x1d0]
+[1169 - 0x15ad] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1c8]]
+[1171 - 0x15b7] INSTR_OP0C b'\xc0\x01\x00\x00' // memory[0x1c0] = memory[0x1bb]
+[1173 - 0x15c1] INSTR_OP08 b'\xc4\x01\x00\x00' // memory[0x1c4] = [int* memory[0x21]]
+[1175 - 0x15cb] INSTR_OP05 b'\xcc\x01\x00\x00' // memory[0x1cc] = [unsigned int* memory[0x163]]
+[1177 - 0x15d5] INSTR_OP32 b'\x02\x00\x00\x00' // memory[0x1e0] = 0x2
+[1180 - 0x15e4] INSTR_OP17 b'\xd0\x01\x00\x00' // memory[0x1d0] = (int)memory[0x1e0] * (int)memory[0x1cc]
+[1183 - 0x15f3] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1e0] = 0x1
+[1185 - 0x15fd] INSTR_OP0D b'\xcc\x01\x00\x00' // memory[0x1cc] = (int)memory[0x1d0] + (int)memory[0x1e0]
+[1187 - 0x1607] INSTR_OP09 b'\xd0\x01\x00\x00' // memory[0x1d0] = memory[0x1cc]
+[1190 - 0x1616] INSTR_OP0A b'\xd8\x01\x00\x00' // memory[0x1d8] = (char)memory[0x1c4] + (long)memory[0x1d0]
+[1192 - 0x1620] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1d8]]
+[1194 - 0x162a] INSTR_OP0C b'\xc4\x01\x00\x00' // memory[0x1c4] = memory[0x1bb]
+[1197 - 0x1639] INSTR_OP0E b'\xc8\x01\x00\x00' // memory[0x1c8] = (int)memory[0x1c0] ^ (int)memory[0x1c4]
+[1200 - 0x1648] INSTR_OP0D b'\xc0\x01\x00\x00' // memory[0x1c0] = (int)memory[0x1bc] + (int)memory[0x1c8]
+[1202 - 0x1652] INSTR_OP14 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1c0]
+[1205 - 0x1661] INSTR_OP15 b'' // [BYTE* memory[0x14b]] = memory[0x1bb]
+[1207 - 0x1667] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x14b]]
+[1209 - 0x1671] INSTR_OP1C b'\xbc\x01\x00\x00' // memory[0x1bc] = (unsigned int*)memory[0x1bb]
+[1211 - 0x167b] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1e0] = 0x0
+[1214 - 0x168e] INSTR_OP1D b'\xc4\x01\x00\x00' // memory[0x1c4] = Sbox[memory[0x1e0]][memory[0x1bc]]
+[1216 - 0x1698] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1c4]]
+[1218 - 0x16a2] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[1220 - 0x16ac] INSTR_OP08 b'\xc0\x01\x00\x00' // memory[0x1c0] = [int* memory[0x31]]
+[1222 - 0x16b6] INSTR_OP05 b'\xc8\x01\x00\x00' // memory[0x1c8] = [unsigned int* memory[0x142]]
+[1224 - 0x16c0] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1e0] = 0x8
+[1227 - 0x16cf] INSTR_OP17 b'\xcc\x01\x00\x00' // memory[0x1cc] = (int)memory[0x1e0] * (int)memory[0x1c8]
+[1229 - 0x16d9] INSTR_OP05 b'\xc8\x01\x00\x00' // memory[0x1c8] = [unsigned int* memory[0x163]]
+[1232 - 0x16e8] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1e0] = 0x1
+[1234 - 0x16f2] INSTR_OP0D b'\xd0\x01\x00\x00' // memory[0x1d0] = (int)memory[0x1c8] + (int)memory[0x1e0]
+[1237 - 0x1701] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1e0] = 0x8
+[1239 - 0x170b] INSTR_OP0F b'\xc8\x01\x00\x00' // memory[0x1c8] = (int)memory[0x1d0] % (int)memory[0x1e0]
+[1242 - 0x171a] INSTR_OP0D b'\xd0\x01\x00\x00' // memory[0x1d0] = (int)memory[0x1cc] + (int)memory[0x1c8]
+[1244 - 0x1724] INSTR_OP09 b'\xc8\x01\x00\x00' // memory[0x1c8] = memory[0x1d0]
+[1247 - 0x1733] INSTR_OP0A b'\xd0\x01\x00\x00' // memory[0x1d0] = (char)memory[0x1c0] + (long)memory[0x1c8]
+[1249 - 0x173d] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x1d0]]
+[1251 - 0x1747] INSTR_OP0C b'\xc0\x01\x00\x00' // memory[0x1c0] = memory[0x1bb]
+[1254 - 0x1756] INSTR_OP0D b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1bc] + (int)memory[0x1c0]
+[1256 - 0x1760] INSTR_OP14 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1c4]
+[1259 - 0x176f] INSTR_OP15 b'' // [BYTE* memory[0x14b]] = memory[0x1bb]
+[1261 - 0x1775] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x14b]]
+[1263 - 0x177f] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[1266 - 0x178e] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1e0] = 0x1
+[1268 - 0x1798] INSTR_OP12 b'\xc0\x01\x00\x00' // memory[0x1c0] = (int)memory[0x1bc] << (int)memory[0x1e0]
+[1270 - 0x17a2] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x14b]]
+[1272 - 0x17ac] INSTR_OP0C b'\xbc\x01\x00\x00' // memory[0x1bc] = memory[0x1bb]
+[1275 - 0x17bb] INSTR_OP32 b'\x07\x00\x00\x00' // memory[0x1e0] = 0x7
+[1277 - 0x17c5] INSTR_OP10 b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1bc] >> (int)memory[0x1e0]
+[1280 - 0x17d4] INSTR_OP13 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c0] | (int)memory[0x1c4]
+[1282 - 0x17de] INSTR_OP14 b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb]
+[1285 - 0x17ed] INSTR_OP15 b'' // [BYTE* memory[0x14b]] = memory[0x1bf]
+[1287 - 0x17f3] INSTR_OP0B b'\xbb\x01\x00\x00' // memory[0x1bb] = [BYTE* memory[0x14b]]
+[1289 - 0x17fd] INSTR_OP08 b'\xbc\x01\x00\x00' // memory[0x1bc] = [int* memory[0x31]]
+[1291 - 0x1807] INSTR_OP05 b'\xc4\x01\x00\x00' // memory[0x1c4] = [unsigned int* memory[0x142]]
+[1293 - 0x1811] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1e0] = 0x8
+[1296 - 0x1820] INSTR_OP17 b'\xc8\x01\x00\x00' // memory[0x1c8] = (int)memory[0x1e0] * (int)memory[0x1c4]
+[1298 - 0x182a] INSTR_OP05 b'\xc4\x01\x00\x00' // memory[0x1c4] = [unsigned int* memory[0x163]]
+[1301 - 0x1839] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1e0] = 0x1
+[1303 - 0x1843] INSTR_OP0D b'\xcc\x01\x00\x00' // memory[0x1cc] = (int)memory[0x1c4] + (int)memory[0x1e0]
+[1306 - 0x1852] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1e0] = 0x8
+[1308 - 0x185c] INSTR_OP0F b'\xc4\x01\x00\x00' // memory[0x1c4] = (int)memory[0x1cc] % (int)memory[0x1e0]
+[1311 - 0x186b] INSTR_OP0D b'\xcc\x01\x00\x00' // memory[0x1cc] = (int)memory[0x1c8] + (int)memory[0x1c4]
+[1313 - 0x1875] INSTR_OP09 b'\xc4\x01\x00\x00' // memory[0x1c4] = memory[0x1cc]
+[1316 - 0x1884] INSTR_OP0A b'\xcc\x01\x00\x00' // memory[0x1cc] = (char)memory[0x1bc] + (long)memory[0x1c4]
+[1319 - 0x1893] INSTR_OP15 b'' // [BYTE* memory[0x1cc]] = memory[0x1bb]
+[1321 - 0x1899] INSTR_OP32 b'\xac(\xa7T' // memory[0x1e0] = 0x54a728ac
+[1324 - 0x18a8] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1e0]
+[1326 - 0x18ae] INSTR_OP30 b'\x01' // memory[0x1e0] = 0x1
+[1328 - 0x18b5] INSTR_OP04 b'\x01\xe8\xff\xff' // JUMPI if memory[0x1e0] can jump to 0xb7
+
+[1330 - 0x18bf] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x163]]
+[1333 - 0x18ce] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[1335 - 0x18d8] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[1338 - 0x18e7] INSTR_OP02 b'' // [unsigned int* memory[0x163]] = memory[0x1bf]
+[1340 - 0x18ed] INSTR_OP32 b'\xce?\x06P' // memory[0x1c3] = 0x50063fce
+[1343 - 0x18fc] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[1345 - 0x1902] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[1347 - 0x1909] INSTR_OP04 b'\xad\xe7\xff\xff' // JUMPI if memory[0x1c3] can jump to 0xb7
+
+[1349 - 0x1913] INSTR_OP32 b'\x13\xde\xaaU' // memory[0x1bb] = 0x55aade13
+[1352 - 0x1922] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1354 - 0x1928] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1356 - 0x192f] INSTR_OP04 b'\x87\xe7\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xb7
+
+[1358 - 0x1939] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x157]]
+[1361 - 0x1948] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[1363 - 0x1952] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[1366 - 0x1961] INSTR_OP02 b'' // [unsigned int* memory[0x157]] = memory[0x1bf]
+[1368 - 0x1967] INSTR_OP32 b'\xeb\xa9\xb7K' // memory[0x1c3] = 0x4bb7a9eb
+[1371 - 0x1976] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[1373 - 0x197c] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[1375 - 0x1983] INSTR_OP04 b'D\xe7\xff\xff' // JUMPI if memory[0x1c3] can jump to 0xc8
+
+[1377 - 0x198d] INSTR_OP32 b'\xd8Z\xddV' // memory[0x1bb] = 0x56dd5ad8
+[1380 - 0x199c] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1382 - 0x19a2] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1384 - 0x19a9] INSTR_OP04 b'\x1e\xe7\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xc8
+
+[1386 - 0x19b3] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x142]]
+[1389 - 0x19c2] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[1391 - 0x19cc] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[1394 - 0x19db] INSTR_OP02 b'' // [unsigned int* memory[0x142]] = memory[0x1bf]
+[1396 - 0x19e1] INSTR_OP32 b'w~\x1a7' // memory[0x1c3] = 0x371a7e77
+[1399 - 0x19f0] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[1401 - 0x19f6] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[1403 - 0x19fd] INSTR_OP04 b'\xca\xe6\xff\xff' // JUMPI if memory[0x1c3] can jump to 0xc8
+
+[1405 - 0x1a07] INSTR_OP08 b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x31]]
+[1407 - 0x1a11] INSTR_OP16 b'\xc3\x01\x00\x00' // memory[0x1c3] = (unsigned int*)memory[0x1bb]
+[1410 - 0x1a20] INSTR_OP1E b'' // [QWORD* memory[0x173]] = memory[0x1c3]
+[1412 - 0x1a26] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1cb] = 0x0
+[1415 - 0x1a35] INSTR_OP02 b'' // [unsigned int* memory[0x17f]] = memory[0x1cb]
+[1417 - 0x1a3b] INSTR_OP32 b'\xeaN-W' // memory[0x1cb] = 0x572d4eea
+[1420 - 0x1a4a] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1cb]
+[1422 - 0x1a50] INSTR_OP30 b'\x01' // memory[0x1cb] = 0x1
+[1424 - 0x1a57] INSTR_OP04 b'p\xe6\xff\xff' // JUMPI if memory[0x1cb] can jump to 0xc8
+
+[1426 - 0x1a61] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x17f]]
+[1429 - 0x1a70] INSTR_OP32 b'\x08\x00\x00\x00' // memory[0x1c0] = 0x8
+[1431 - 0x1a7a] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[1434 - 0x1a89] INSTR_OP32 b'\x8eH9W' // memory[0x1c0] = 0x5739488e
+[1437 - 0x1a98] INSTR_OP32 b'\x9b\x18\x00h' // memory[0x1c4] = 0x6800189b
+[1439 - 0x1aa2] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[1442 - 0x1ab1] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1444 - 0x1ab7] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1446 - 0x1abe] INSTR_OP04 b'\x1a\xe6\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xd9
+
+[1448 - 0x1ac8] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1bb] = 0x0
+[1451 - 0x1adb] INSTR_OP1F b'' // [QWORD* memory[0x18f]] = memory[0x1bb]
+[1453 - 0x1ae1] INSTR_OP32 b'\x00\x00\x00\x00' // memory[0x1bb] = 0x0
+[1456 - 0x1af0] INSTR_OP02 b'' // [unsigned int* memory[0x19b]] = memory[0x1bb]
+[1458 - 0x1af6] INSTR_OP32 b'_RRW' // memory[0x1bb] = 0x5752525f
+[1461 - 0x1b05] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1463 - 0x1b0b] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1465 - 0x1b12] INSTR_OP04 b'\xc6\xe5\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xd9
+
+[1467 - 0x1b1c] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x19b]]
+[1470 - 0x1b2b] INSTR_OP32 b' \x00\x00\x00' // memory[0x1c0] = 0x20
+[1472 - 0x1b35] INSTR_OP06 b'\xbf\x01\x00\x00' // memory[0x1bf] = BYTE memory[0x1bb] < memory[0x1c0]
+[1475 - 0x1b44] INSTR_OP32 b'\xbc\x01\x16X' // memory[0x1c0] = 0x581601bc
+[1478 - 0x1b53] INSTR_OP32 b'us\xccX' // memory[0x1c4] = 0x58cc7375
+[1480 - 0x1b5d] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1bf] ? memory[452] : memory[0x1c0]
+[1483 - 0x1b6c] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1485 - 0x1b72] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1487 - 0x1b79] INSTR_OP04 b'_\xe5\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xd9
+
+[1489 - 0x1b83] INSTR_OP20 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x173]]
+[1491 - 0x1b8d] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x17f]]
+[1493 - 0x1b97] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[1496 - 0x1ba6] INSTR_OP21 b'\xcf\x01\x00\x00' // memory[0x1cf] = 4 * memory[0x1c7] + memory[0x1bb]
+[1498 - 0x1bb0] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x1cf]]
+[1500 - 0x1bba] INSTR_OP05 b'\xbf\x01\x00\x00' // memory[0x1bf] = [unsigned int* memory[0x19b]]
+[1503 - 0x1bc9] INSTR_OP19 b'\xc3\x01\x00\x00' // memory[0x1c3] = (int)memory[0x1bb] >> (int)memory[0x1bf]
+[1506 - 0x1bd8] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1d7] = 0x1
+[1508 - 0x1be2] INSTR_OP18 b'\xbb\x01\x00\x00' // memory[0x1bb] = (int)memory[0x1c3] & (int)memory[0x1d7]
+[1511 - 0x1bf1] INSTR_OP02 b'' // [unsigned int* memory[0x1a7]] = memory[0x1bb]
+[1513 - 0x1bf7] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x19b]]
+[1515 - 0x1c01] INSTR_OP09 b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb]
+[1517 - 0x1c0b] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d7] = 0x0
+[1520 - 0x1c1e] INSTR_OP22 b'\xc7\x01\x00\x00' // memory[0x1c7] = weights[ 256 * memory[0x1d7] + 8 * memory[0x1bf] ]
+[1522 - 0x1c28] INSTR_OP23 b'\xbb\x01\x00\x00' // memory[0x1bb] = ..[unsigned int* memory[0x1c7]]
+[1524 - 0x1c32] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x1a7]]
+[1526 - 0x1c3c] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[1529 - 0x1c4b] INSTR_OP24 b'\xcf\x01\x00\x00' // memory[0x1cf] = (QWORD)memory[0x1bb] * (QWORD)memory[0x1c7]
+[1531 - 0x1c55] INSTR_OP23 b'\xbb\x01\x00\x00' // memory[0x1bb] = ..[unsigned int* memory[0x18f]]
+[1534 - 0x1c64] INSTR_OP25 b'\xc3\x01\x00\x00' // memory[0x1c3] = (char*)memory[0x1bb] * (QWORD)memory[0x1cf]
+[1537 - 0x1c73] INSTR_OP1F b'' // [QWORD* memory[0x18f]] = memory[0x1c3]
+[1538 - 0x1c74] INSTR_OP26 b'\xbb\x01\x00\x00' // memory[0x1bb] = mod
+[1540 - 0x1c7e] INSTR_OP23 b'\xc3\x01\x00\x00' // memory[0x1c3] = ..[unsigned int* memory[0x18f]]
+[1543 - 0x1c8d] INSTR_OP27 b'\xcb\x01\x00\x00' // memory[0x1cb] = (int)memory[0x1c3] % (QWORD)memory[0x1bb]
+[1546 - 0x1c9c] INSTR_OP1F b'' // [QWORD* memory[0x18f]] = memory[0x1cb]
+[1548 - 0x1ca2] INSTR_OP32 b'\x7f\xfc\xa3X' // memory[0x1d7] = 0x58a3fc7f
+[1551 - 0x1cb1] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1d7]
+[1553 - 0x1cb7] INSTR_OP30 b'\x01' // memory[0x1d7] = 0x1
+[1555 - 0x1cbe] INSTR_OP04 b'\x1a\xe4\xff\xff' // JUMPI if memory[0x1d7] can jump to 0xd9
+
+[1557 - 0x1cc8] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x19b]]
+[1560 - 0x1cd7] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[1562 - 0x1ce1] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[1565 - 0x1cf0] INSTR_OP02 b'' // [unsigned int* memory[0x19b]] = memory[0x1bf]
+[1567 - 0x1cf6] INSTR_OP32 b'_RRW' // memory[0x1c3] = 0x5752525f
+[1570 - 0x1d05] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[1572 - 0x1d0b] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[1574 - 0x1d12] INSTR_OP04 b'\xd7\xe3\xff\xff' // JUMPI if memory[0x1c3] can jump to 0xea
+
+[1576 - 0x1d1c] INSTR_OP23 b'\xbb\x01\x00\x00' // memory[0x1bb] = ..[unsigned int* memory[0x18f]]
+[1578 - 0x1d26] INSTR_OP05 b'\xc3\x01\x00\x00' // memory[0x1c3] = [unsigned int* memory[0x17f]]
+[1580 - 0x1d30] INSTR_OP09 b'\xc7\x01\x00\x00' // memory[0x1c7] = memory[0x1c3]
+[1582 - 0x1d3a] INSTR_OP32 b'\x00\x00\x00\x00\x00\x00\x00\x00' // memory[0x1d7] = 0x0
+[1585 - 0x1d4d] INSTR_OP28 b'\xcf\x01\x00\x00' // memory[0x1cf] = sums[ 64 * memory[0x1d7]  + 8 * memory[0x1c7]
+[1587 - 0x1d57] INSTR_OP23 b'\xc3\x01\x00\x00' // memory[0x1c3] = ..[unsigned int* memory[0x1cf]]
+[1590 - 0x1d66] INSTR_OP29 b'\xcb\x01\x00\x00' // memory[0x1cb] = memory[0x1bb] !=  memory[0x1c3]
+[1593 - 0x1d75] INSTR_OP32 b'E\xad\xeeX' // memory[0x1d7] = 0x58eead45
+[1596 - 0x1d84] INSTR_OP32 b'\xeaG\xdaZ' // memory[0x1db] = 0x5ada47ea
+[1598 - 0x1d8e] INSTR_OP07 b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x1cb] ? memory[475] : memory[0x1d7]
+[1601 - 0x1d9d] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1603 - 0x1da3] INSTR_OP30 b'\x01' // memory[0x1d7] = 0x1
+[1605 - 0x1daa] INSTR_OP04 b'?\xe3\xff\xff' // JUMPI if memory[0x1d7] can jump to 0xea
+
+[1607 - 0x1db4] INSTR_OP30 b'\x00' // memory[0x1bb] = 0x0
+[1610 - 0x1dc0] INSTR_OP2A b'' // memory[0x11] = memory[0x1bb] & 1
+[1612 - 0x1dc6] INSTR_OP32 b')\xa2Zi' // memory[0x1bb] = 0x695aa229
+[1615 - 0x1dd5] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1617 - 0x1ddb] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1619 - 0x1de2] INSTR_OP04 b'\x07\xe3\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xea
+
+[1621 - 0x1dec] INSTR_OP32 b' V\x16`' // memory[0x1bb] = 0x60165620
+[1624 - 0x1dfb] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1626 - 0x1e01] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1628 - 0x1e08] INSTR_OP04 b'\xe1\xe2\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xea
+
+[1630 - 0x1e12] INSTR_OP05 b'\xbb\x01\x00\x00' // memory[0x1bb] = [unsigned int* memory[0x17f]]
+[1633 - 0x1e21] INSTR_OP32 b'\x01\x00\x00\x00' // memory[0x1c3] = 0x1
+[1635 - 0x1e2b] INSTR_OP0D b'\xbf\x01\x00\x00' // memory[0x1bf] = (int)memory[0x1bb] + (int)memory[0x1c3]
+[1638 - 0x1e3a] INSTR_OP02 b'' // [unsigned int* memory[0x17f]] = memory[0x1bf]
+[1640 - 0x1e40] INSTR_OP32 b'\xeaN-W' // memory[0x1c3] = 0x572d4eea
+[1643 - 0x1e4f] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1c3]
+[1645 - 0x1e55] INSTR_OP30 b'\x01' // memory[0x1c3] = 0x1
+[1647 - 0x1e5c] INSTR_OP04 b'\x8d\xe2\xff\xff' // JUMPI if memory[0x1c3] can jump to 0xea
+
+[1649 - 0x1e66] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1652 - 0x1e72] INSTR_OP2A b'' // memory[0x11] = memory[0x1bb] & 1
+[1654 - 0x1e78] INSTR_OP32 b')\xa2Zi' // memory[0x1bb] = 0x695aa229
+[1657 - 0x1e87] INSTR_OP03 b'' // memory[0x1b3] = (unsigned int*) memory[0x1bb]
+[1659 - 0x1e8d] INSTR_OP30 b'\x01' // memory[0x1bb] = 0x1
+[1661 - 0x1e94] INSTR_OP04 b'U\xe2\xff\xff' // JUMPI if memory[0x1bb] can jump to 0xea
+
+[1663 - 0x1e9e] INSTR_OP2B b'\xbb\x01\x00\x00' // memory[0x1bb] = memory[0x11] & 1
+[1665 - 0x1ea8] INSTR_OP2C b'' // return memory[0x1bb]
+[1667 - 0x1eae] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1670 - 0x1ebd] INSTR_OP32 b'\xdd\x1a\xc3\x01' // memory[0x1c0] = 0x1c31add
+[1672 - 0x1ec7] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1674 - 0x1ed1] INSTR_OP04 b'\x90\xe2\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x162
+
+[1676 - 0x1edb] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1678 - 0x1ee2] INSTR_OP04 b'Y\xe4\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x33c
+[1680 - 0x1eec] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1683 - 0x1efb] INSTR_OP32 b'\x19_\xf8\x00' // memory[0x1c0] = 0xf85f19
+[1685 - 0x1f05] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1687 - 0x1f0f] INSTR_OP04 b'\xeb\xe1\xff\xff' // JUMPI if memory[0x1bf] can jump to 0xfb
+[1689 - 0x1f19] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1691 - 0x1f20] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1ea9
+[1693 - 0x1f2a] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1696 - 0x1f39] INSTR_OP32 b'L\x157\x04' // memory[0x1c0] = 0x437154c
+[1698 - 0x1f43] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1700 - 0x1f4d] INSTR_OP04 b'\x99\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1ee7
+[1702 - 0x1f57] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1704 - 0x1f5e] INSTR_OP04 b'1\xe4\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x390
+[1706 - 0x1f68] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1709 - 0x1f77] INSTR_OP32 b'\xf7\x8cJ\x0c' // memory[0x1c0] = 0xc4a8cf7
+[1711 - 0x1f81] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1713 - 0x1f8b] INSTR_OP04 b'W\xe5\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x4e3
+[1715 - 0x1f95] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1717 - 0x1f9c] INSTR_OP04 b'\xad\xe5\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x54a
+[1719 - 0x1fa6] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1722 - 0x1fb5] INSTR_OP32 b'\x99\x0c\xa8\x12' // memory[0x1c0] = 0x12a80c99
+[1724 - 0x1fbf] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1726 - 0x1fc9] INSTR_OP04 b'\xe5\xea\xff\xff' // JUMPI if memory[0x1bf] can jump to 0xaaf
+[1728 - 0x1fd3] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1730 - 0x1fda] INSTR_OP04 b'\x0f\xeb\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xaea
+[1732 - 0x1fe4] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1735 - 0x1ff3] INSTR_OP32 b'\xa4\xbe_\x12' // memory[0x1c0] = 0x125fbea4
+[1737 - 0x1ffd] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1739 - 0x2007] INSTR_OP04 b'S\xea\xff\xff' // JUMPI if memory[0x1bf] can jump to 0xa5b
+[1741 - 0x2011] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1743 - 0x2018] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1fa1
+[1745 - 0x2022] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1748 - 0x2031] INSTR_OP32 b'\x19\x9ag\x11' // memory[0x1c0] = 0x11679a19
+[1750 - 0x203b] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1752 - 0x2045] INSTR_OP04 b'\x1d\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1f63
+[1754 - 0x204f] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1756 - 0x2056] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1fdf
+[1758 - 0x2060] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1761 - 0x206f] INSTR_OP32 b'\xb3\x19\xd7\n' // memory[0x1c0] = 0xad719b3
+[1763 - 0x2079] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1765 - 0x2083] INSTR_OP04 b'\xa1\xfe\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1f25
+[1767 - 0x208d] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1769 - 0x2094] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x201d
+[1771 - 0x209e] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1774 - 0x20ad] INSTR_OP32 b'\xbc{A\x18' // memory[0x1c0] = 0x18417bbc
+[1776 - 0x20b7] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1778 - 0x20c1] INSTR_OP04 b'\x8f\xea\xff\xff' // JUMPI if memory[0x1bf] can jump to 0xb51
+[1780 - 0x20cb] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1782 - 0x20d2] INSTR_OP04 b'M\xed\xff\xff' // JUMPI if memory[0x1c0] can jump to 0xe20
+[1784 - 0x20dc] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1787 - 0x20eb] INSTR_OP32 b'\xbb\x19V\x19' // memory[0x1c0] = 0x195619bb
+[1789 - 0x20f5] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1791 - 0x20ff] INSTR_OP04 b'\x87\xed\xff\xff' // JUMPI if memory[0x1bf] can jump to 0xe87
+[1793 - 0x2109] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1795 - 0x2110] INSTR_OP04 b'&\xef\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1037
+[1797 - 0x211a] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1800 - 0x2129] INSTR_OP32 b'\x80\xf9]\x19' // memory[0x1c0] = 0x195df980
+[1802 - 0x2133] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1804 - 0x213d] INSTR_OP04 b'\x99\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x20d7
+[1806 - 0x2147] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1808 - 0x214e] INSTR_OP04 b'<\xef\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x108b
+[1810 - 0x2158] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1813 - 0x2167] INSTR_OP32 b'\xb3A3\x19' // memory[0x1c0] = 0x193341b3
+[1815 - 0x2171] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1817 - 0x217b] INSTR_OP04 b'\x1d\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x2099
+[1819 - 0x2185] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1821 - 0x218c] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2115
+[1823 - 0x2196] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1826 - 0x21a5] INSTR_OP32 b'\xcb\xa8\xfa$' // memory[0x1c0] = 0x24faa8cb
+[1828 - 0x21af] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1830 - 0x21b9] INSTR_OP04 b'w\xef\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1131
+[1832 - 0x21c3] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1834 - 0x21ca] INSTR_OP04 b'\xcd\xef\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1198
+[1836 - 0x21d4] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1839 - 0x21e3] INSTR_OP32 b'\x9a\xd1\xf5\x1a' // memory[0x1c0] = 0x1af5d19a
+[1841 - 0x21ed] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1843 - 0x21f7] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x2153
+[1845 - 0x2201] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1847 - 0x2208] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2191
+[1849 - 0x2212] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1852 - 0x2221] INSTR_OP32 b'\xfa\x9f=\x17' // memory[0x1c0] = 0x173d9ffa
+[1854 - 0x222b] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1856 - 0x2235] INSTR_OP04 b'%\xfe\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x205b
+[1858 - 0x223f] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1860 - 0x2246] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x21cf
+[1862 - 0x2250] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1865 - 0x225f] INSTR_OP32 b'D\xfe\x8a*' // memory[0x1c0] = 0x2a8afe44
+[1867 - 0x2269] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1869 - 0x2273] INSTR_OP04 b'\xcb\xef\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x123f
+[1871 - 0x227d] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1873 - 0x2284] INSTR_OP04 b'\x0e\xf0\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1293
+[1875 - 0x228e] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1878 - 0x229d] INSTR_OP32 b'\xe4\x18\xf1.' // memory[0x1c0] = 0x2ef118e4
+[1880 - 0x22a7] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1882 - 0x22b1] INSTR_OP04 b'\x07\xf0\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x12b9
+[1884 - 0x22bb] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1886 - 0x22c2] INSTR_OP04 b'J\xf0\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x130d
+[1888 - 0x22cc] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1891 - 0x22db] INSTR_OP32 b' Tz+' // memory[0x1c0] = 0x2b7a5420
+[1893 - 0x22e5] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1895 - 0x22ef] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x224b
+[1897 - 0x22f9] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1899 - 0x2300] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2289
+[1901 - 0x230a] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1904 - 0x2319] INSTR_OP32 b'T\xe1BG' // memory[0x1c0] = 0x4742e154
+[1906 - 0x2323] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1908 - 0x232d] INSTR_OP04 b'\x1a\xf0\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1348
+[1910 - 0x2337] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1912 - 0x233e] INSTR_OP04 b'p\xf0\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x13af
+[1914 - 0x2348] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1917 - 0x2357] INSTR_OP32 b'\xaea\x89L' // memory[0x1c0] = 0x4c8961ae
+[1919 - 0x2361] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1921 - 0x236b] INSTR_OP04 b'\xd9\xf0\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1445
+[1923 - 0x2375] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1925 - 0x237c] INSTR_OP04 b'/\xf1\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x14ac
+[1927 - 0x2386] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1930 - 0x2395] INSTR_OP32 b'\xb7G+K' // memory[0x1c0] = 0x4b2b47b7
+[1932 - 0x239f] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1934 - 0x23a9] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x2305
+[1936 - 0x23b3] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1938 - 0x23ba] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2343
+[1940 - 0x23c4] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1943 - 0x23d3] INSTR_OP32 b'\xa4uC/' // memory[0x1c0] = 0x2f4375a4
+[1945 - 0x23dd] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1947 - 0x23e7] INSTR_OP04 b'\xdf\xfe\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x22c7
+[1949 - 0x23f1] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1951 - 0x23f8] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2381
+[1953 - 0x2402] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1956 - 0x2411] INSTR_OP32 b'\xc4S\x03*' // memory[0x1c0] = 0x2a0353c4
+[1958 - 0x241b] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1960 - 0x2425] INSTR_OP04 b'\xe7\xfd\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x220d
+[1962 - 0x242f] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1964 - 0x2436] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x23bf
+[1966 - 0x2440] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1969 - 0x244f] INSTR_OP32 b'\xdc1WQ' // memory[0x1c0] = 0x515731dc
+[1971 - 0x2459] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1973 - 0x2463] INSTR_OP04 b'\x83\xf0\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x14e7
+[1975 - 0x246d] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1977 - 0x2474] INSTR_OP04 b'\xd9\xf0\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x154e
+[1979 - 0x247e] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1982 - 0x248d] INSTR_OP32 b'\xbe\xfe\x1aU' // memory[0x1c0] = 0x551afebe
+[1984 - 0x2497] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1986 - 0x24a1] INSTR_OP04 b'\x18\xf4\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x18ba
+[1988 - 0x24ab] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[1990 - 0x24b2] INSTR_OP04 b'[\xf4\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x190e
+[1992 - 0x24bc] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[1995 - 0x24cb] INSTR_OP32 b'\x7f\x16}T' // memory[0x1c0] = 0x547d167f
+[1997 - 0x24d5] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[1999 - 0x24df] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x243b
+[2001 - 0x24e9] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2003 - 0x24f0] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2479
+[2005 - 0x24fa] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2008 - 0x2509] INSTR_OP32 b'\xb3\xbfrV' // memory[0x1c0] = 0x5672bfb3
+[2010 - 0x2513] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2012 - 0x251d] INSTR_OP04 b'\x16\xf4\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1934
+[2014 - 0x2527] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2016 - 0x252e] INSTR_OP04 b'Y\xf4\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1988
+[2018 - 0x2538] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2021 - 0x2547] INSTR_OP32 b'\x13C\xa2U' // memory[0x1c0] = 0x55a24313
+[2023 - 0x2551] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2025 - 0x255b] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x24b7
+[2027 - 0x2565] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2029 - 0x256c] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x24f5
+[2031 - 0x2576] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2034 - 0x2585] INSTR_OP32 b'\x069\xdeV' // memory[0x1c0] = 0x56de3906
+[2036 - 0x258f] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2038 - 0x2599] INSTR_OP04 b'\x14\xf4\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x19ae
+[2040 - 0x25a3] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2042 - 0x25aa] INSTR_OP04 b'W\xf4\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1a02
+[2044 - 0x25b4] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2047 - 0x25c3] INSTR_OP32 b"'\xe88W" // memory[0x1c0] = 0x5738e827
+[2049 - 0x25cd] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2051 - 0x25d7] INSTR_OP04 b'\x84\xf4\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1a5c
+[2053 - 0x25e1] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2055 - 0x25e8] INSTR_OP04 b'\xda\xf4\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1ac3
+[2057 - 0x25f2] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2060 - 0x2601] INSTR_OP32 b'\xdb\xbb,W' // memory[0x1c0] = 0x572cbbdb
+[2062 - 0x260b] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2064 - 0x2615] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x2571
+[2066 - 0x261f] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2068 - 0x2626] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x25af
+[2070 - 0x2630] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2073 - 0x263f] INSTR_OP32 b'\xb9\xb8sX' // memory[0x1c0] = 0x5873b8b9
+[2075 - 0x2649] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2077 - 0x2653] INSTR_OP04 b'*\xf5\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1b7e
+[2079 - 0x265d] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2081 - 0x2664] INSTR_OP04 b'^\xf6\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1cc3
+[2083 - 0x266e] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2086 - 0x267d] INSTR_OP32 b'\xc9\x0f\xddX' // memory[0x1c0] = 0x58dd0fc9
+[2088 - 0x2687] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2090 - 0x2691] INSTR_OP04 b'\x85\xf6\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1d17
+[2092 - 0x269b] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2094 - 0x26a2] INSTR_OP04 b'\x0c\xf7\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1daf
+[2096 - 0x26ac] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2099 - 0x26bb] INSTR_OP32 b'\xbd!\xc4X' // memory[0x1c0] = 0x58c421bd
+[2101 - 0x26c5] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2103 - 0x26cf] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x262b
+[2105 - 0x26d9] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2107 - 0x26e0] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2669
+[2109 - 0x26ea] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2112 - 0x26f9] INSTR_OP32 b'\xf4\xafpW' // memory[0x1c0] = 0x5770aff4
+[2114 - 0x2703] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2116 - 0x270d] INSTR_OP04 b'\t\xf4\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1b17
+[2118 - 0x2717] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2120 - 0x271e] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x26a7
+[2122 - 0x2728] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2125 - 0x2737] INSTR_OP32 b'!\x889W' // memory[0x1c0] = 0x57398821
+[2127 - 0x2741] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2129 - 0x274b] INSTR_OP04 b'\xa1\xfe\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x25ed
+[2131 - 0x2755] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2133 - 0x275c] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x26e5
+[2135 - 0x2766] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2138 - 0x2775] INSTR_OP32 b'\x89\xb5\xdbV' // memory[0x1c0] = 0x56dbb589
+[2140 - 0x277f] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2142 - 0x2789] INSTR_OP04 b'\xa9\xfd\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x2533
+[2144 - 0x2793] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2146 - 0x279a] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2723
+[2148 - 0x27a4] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2151 - 0x27b3] INSTR_OP32 b'H\x90\xedZ' // memory[0x1c0] = 0x5aed9048
+[2153 - 0x27bd] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2155 - 0x27c7] INSTR_OP04 b'\x1f\xf6\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1de7
+[2157 - 0x27d1] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2159 - 0x27d8] INSTR_OP04 b'4\xf6\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1e0d
+[2161 - 0x27e2] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2164 - 0x27f1] INSTR_OP32 b'\xe2\xcf;i' // memory[0x1c0] = 0x693bcfe2
+[2166 - 0x27fb] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2168 - 0x2805] INSTR_OP04 b'[\xf6\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x1e61
+[2170 - 0x280f] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2172 - 0x2816] INSTR_OP04 b'\x82\xf6\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x1e99
+[2174 - 0x2820] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2177 - 0x282f] INSTR_OP32 b'}\xdc\xf3f' // memory[0x1c0] = 0x66f3dc7d
+[2179 - 0x2839] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2181 - 0x2843] INSTR_OP04 b'[\xff\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x279f
+[2183 - 0x284d] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2185 - 0x2854] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x27dd
+[2187 - 0x285e] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2190 - 0x286d] INSTR_OP32 b'K;\xefX' // memory[0x1c0] = 0x58ef3b4b
+[2192 - 0x2877] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2194 - 0x2881] INSTR_OP04 b'\xdf\xfe\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x2761
+[2196 - 0x288b] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2198 - 0x2892] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x281b
+[2200 - 0x289c] INSTR_OP2D b'\xbb\x01\x00\x00' // memory[0x1bb] = [int* memory[0x1b3]]
+[2203 - 0x28ab] INSTR_OP32 b'Ml^O' // memory[0x1c0] = 0x4f5e6c4d
+[2205 - 0x28b5] INSTR_OP2E b'\xbf\x01\x00\x00' // memory[0x1bf] = memory[0x1bb] < memory[0x1c0]
+[2207 - 0x28bf] INSTR_OP04 b'=\xfb\xff\xff' // JUMPI if memory[0x1bf] can jump to 0x23fd
+[2209 - 0x28c9] INSTR_OP30 b'\x01' // memory[0x1c0] = 0x1
+[2211 - 0x28d0] INSTR_OP04 b'\x88\xff\xff\xff' // JUMPI if memory[0x1c0] can jump to 0x2859
