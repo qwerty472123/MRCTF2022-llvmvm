@@ -58,8 +58,8 @@ hook 结果
 
 后来把function1也给逆了。(分析程序 [parser_with_stack_func1.py](./parser_with_stack_func1.py))
 
-[func1_logic.py](,/func1_logic.py)
+[func1_logic.py](./func1_logic.py)
 
 不需要hook结果的解题脚本
 
-[solver.py](,/solver.py)
+[solver.py](./solver.py)
